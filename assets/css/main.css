@@ -1,7 +1,7 @@
 .cardWrapper {
   color: grey;
   border: 1px solid #bbb;
-  width: 135px;
+  min-width: 135px;
   text-align: center;
   border-radius: 5px;
   padding: 10px 0 10px 0;	
@@ -28,7 +28,8 @@ div > .card:hover {
 }
 
 form input {
-	width: 30em;
+	width: 46%;
+	min-width: 340px;
 }
 
 button: hover {
