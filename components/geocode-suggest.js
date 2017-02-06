@@ -12,39 +12,39 @@ class GeoCodeSuggest extends Component {
       if (err) { throw new Error(err) }
       this.props.showLoadingIcon();
 
-			this.props.changeLocation({
-				lat: lat,
-				lng: lng,
-				location: this.props.location
-			});
+      this.props.changeLocation({
+        lat: lat,
+        lng: lng,
+        location: this.props.location
+      });
     })
   }
 
-	onChange = (address) => {
-		this.props.changeAddress(address);
-	}
+  onChange = (address) => {
+    this.props.changeAddress(address);
+  }
 
-	render () {
-		let locationStyle = { color: 'blue' }
-		
-	  return (
-			<div className="row">
-		    <form onSubmit={this.handleFormSubmit.bind(this)}>
-		    	<h2 style={locationStyle}>{this.props.location}</h2>
+  render () {
+    let locationStyle = { color: 'blue' }
+    
+    return (
+      <div className="row">
+        <form onSubmit={this.handleFormSubmit.bind(this)}>
+          <h2 style={locationStyle}>{this.props.location}</h2>
 
-		      <PlacesAutocomplete
-		        value={this.props.location}
-		        onChange={this.onChange}
-		      />
-		      <button type="submit">Submit</button>
-			    <style jsx>{` 
-			    	input { width: 30em; }
-			    	button:hover { color: blue; }
-			    	`}</style>
-		    </form>
-			</div>
-	  )			
-	}
+          <PlacesAutocomplete
+            value={this.props.location}
+            onChange={this.onChange}
+          />
+          <button type="submit">Submit</button>
+          <style jsx>{` 
+            input { width: 30em; }
+            button:hover { color: blue; }
+            `}</style>
+        </form>
+      </div>
+    )     
+  }
 }
 
 export default GeoCodeSuggest;
