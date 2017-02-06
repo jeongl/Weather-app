@@ -37,10 +37,6 @@ class GeoCodeSuggest extends Component {
             onChange={this.onChange}
           />
           <button type="submit">Submit</button>
-          <style jsx>{` 
-            input { width: 30em; }
-            button:hover { color: blue; }
-            `}</style>
         </form>
       </div>
     )     

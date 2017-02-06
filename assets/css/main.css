@@ -1,4 +1,36 @@
-.main {
-	margin: 'auto',
-	width: '50px'
+.cardWrapper {
+  color: grey;
+  border: 1px solid #bbb;
+  width: 135px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 0 10px 0;	
+}
+
+.main p {
+	margin-bottom: 0;
+}
+
+.summary {
+	padding: 7px;
+	padding-top: 20px;
+	color: blue;
+}
+
+.card > h2 {
+	font-size: 20px;
+	color: light-blue;
+	text-decoration: underline;
+}
+
+div > .card:hover {
+	color: black;
+}
+
+form input {
+	width: 30em;
+}
+
+button: hover {
+	color: blue;
 }
