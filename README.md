@@ -12,7 +12,7 @@ It uses the following packages:
 
 This app requires [Node.js](https://nodejs.org/) v6.2+ to run.
 
-For development, the node_modules have to be installed. Running the custom command starts a custom server, vs using the supplied next.js server. This is useful, because all requests to Dark Sky are proxied, as they allow no CORS requests.
+For development, the node_modules have to be installed. Running the custom command starts a custom server, vs using the supplied next.js server. This is useful, because all requests to Dark Sky are proxied, as they allow no CORS requests. A proxy call to Dark Sky is defined as one of the routes.
 
 ```sh
 $ npm install
