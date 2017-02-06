@@ -25,8 +25,8 @@ app.prepare()
     return handle(req, res)
   })
 
-  server.listen(process.env.PORT || 3010, (err) => {
+  server.listen(3010, (err) => {
     if (err) throw err
-    console.log(`> Ready on ${process.env.PORT}`)
+    console.log(`> Ready on 3010`)
   })
 })
