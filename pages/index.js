@@ -1,38 +1,29 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { reducer, initStore, startClock } from '../store'
-import Page from '../components/Page'
+import Page from '../containers/Index'
 
 export default class Counter extends React.Component {
   static getInitialProps ({ req }) {
     const isServer = !!req
-    // console.log('reqss: ', req.query);
     const store = initStore(reducer, null, isServer)
-    store.dispatch({ type: 'TICK', light: !isServer, ts: Date.now() })
+    store.dispatch({ type: 'SERVER_LOAD',  
+      isFetching: true, lat: '47.6062095', 
+      lng: '-122.3320708', location: 'Seattle, WA' 
+    });
+
     return { initialState: store.getState(), isServer }
   }
 
   constructor (props) {
     super(props)
-    console.log('props /', props);
     this.store = initStore(reducer, props.initialState, props.isServer)
-  }
-
-  componentDidMount () {
-    // this.timer = this.store.dispatch(startClock())
-    navigator.geolocation.getCurrentPosition(result => this.store.dispatch({
-      type: 'FETCH_FORECAST'
-    }));
-  }
-
-  componentWillUnmount () {
-    // clearInterval(this.timer)
   }
 
   render () {
     return (
       <Provider store={this.store}>
-        <Page title='Index Page' linkTo='/other' />
+        <Page title='Index Page' />
       </Provider>
     )
   }

@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
+    "custom": "node server.js",
     "build": "next build",
     "start": "next start",
-    "prod": "next build && next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": "next build && NODE_ENV=production node server.js",
+    "test": "jest"
   },
   "engines": {
     "npm": ">=6.2"
@@ -16,12 +17,25 @@
   "author": "Jeong Lim",
   "license": "MIT",
   "dependencies": {
+    "es6-promise": "^4.0.5",
     "express": "^4.14.1",
-    "next": "^1.2.3",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.17.1",
+    "next": "^2.0.0-beta",
+    "react": "^15.4.2",
+    "react-loading": "0.0.9",
+    "react-places-autocomplete": "^2.12.0",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^18.0.0",
+    "babel-polyfill": "^6.22.0",
+    "jest": "^18.1.0"
   }
 }
